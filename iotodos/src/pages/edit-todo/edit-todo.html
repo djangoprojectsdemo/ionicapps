@@ -1,0 +1,36 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>edit-todo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding *ngIf="todo">
+    <form (submit)="onEditSubmit()">
+        <ion-list>
+          <ion-item>
+            <ion-label fixed>Text</ion-label>
+            <ion-input type="text" [(ngModel)]="todo.text"name="text"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label fixed>Body</ion-label>
+            <ion-textarea type="text" [(ngModel)]="todo.body"name="body"></ion-textarea>
+             </ion-item>
+        
+             <ion-item>
+              <ion-label fixed>Duee Date</ion-label>
+             <ion-datetime displayFormat="MM DD YYYY" [(ngModel)]="todo.due" name="due"></ion-datetime>
+             </ion-item>
+        
+            <button 
+            ion-button 
+            type="submit"
+            block>Edit Todo</button>
+        
+        </ion-list>
+        </form>
+</ion-content>

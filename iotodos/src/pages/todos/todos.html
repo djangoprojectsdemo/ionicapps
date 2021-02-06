@@ -1,0 +1,20 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>todos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-list *ngIf="todos">
+ 
+  <button ion-item *ngFor="let todo of todos" (click)="todoSelected(todo)">
+    
+  {{todo.text}}
+</button>
+</ion-list>
+
+</ion-content>

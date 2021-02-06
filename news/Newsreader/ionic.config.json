@@ -1,0 +1,7 @@
+{
+  "name": "Newsreader",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

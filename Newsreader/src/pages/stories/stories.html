@@ -1,0 +1,50 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Thrasos News Stand</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+     <!--  <ion-item>
+          <ion-label>Topic</ion-label>
+          <ion-select (ionChange)="changeTopic()" [(ngModel)]="topic">
+            <ion-option value="cnn_topstories" selected>Top Stories</ion-option>
+            <ion-option value="cnn_world">World News</ion-option>
+            <ion-option value="cnn_allpolitics">Politics</ion-option>
+            <ion-option value="cnn_tech">Technology</ion-option>
+            <ion-option value="cnn_health">Health</ion-option>
+            <ion-option value="cnn_showbiz">Entertainment</ion-option>
+            <ion-option value="cnn_travel">Travel</ion-option>
+            <ion-option value="money_latest">Finance</ion-option>
+          </ion-select>
+        </ion-item> -->
+        <ion-item>
+          <ion-label>Topic</ion-label>
+          <ion-select (ionChange)="changeTopic()" [(ngModel)]="topic">
+            <ion-option value="topstories" selected>Top Stories</ion-option>
+            <ion-option value="world">World News</ion-option>
+            <ion-option value="technology">Technology</ion-option>
+            <ion-option value="business">Business</ion-option>
+           
+            
+            
+          </ion-select>
+        </ion-item>
+  </ion-list>
+<ion-list *ngIf="stories">
+  
+  <ion-item *ngFor="let story of stories">
+<ion-thumbnail item-left>
+<img class="list-thumb" src="{{story.enclosure.thumbnail}}">
+</ion-thumbnail>
+<h2>{{story.title}}</h2>
+<p>{{story.pubDate}}</p>
+<button ion-button clear item-right (click)="storySelected(story)">View</button>
+  </ion-item>
+</ion-list>
+</ion-content>

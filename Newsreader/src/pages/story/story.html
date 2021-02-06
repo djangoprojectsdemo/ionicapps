@@ -1,0 +1,23 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>News From BBC</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-card *ngIf="story">
+  <ion-card-title>
+    {{story.title}}<br>
+   <small>{{story.pubDate}}</small> 
+  </ion-card-title>
+<ion-card-content>
+  <div [innerHTML]="story.content"></div>
+  <hr>
+  <a target="_blank" href="{{story.link}}" ion-button large block>Full Story</a>
+</ion-card-content>
+</ion-card>
+</ion-content>

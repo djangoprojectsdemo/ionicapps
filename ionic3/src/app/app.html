@@ -1,0 +1,42 @@
+<ion-menu [content]="content" side="right">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Side Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <ion-item (click)="onLoadhome()" menuClose>
+                Home
+            </ion-item>
+            <ion-item (click)="onLoadabout()"menuClose>
+                    About
+                </ion-item>
+                <ion-item (click)="onLoadservice()" menuClose>
+                        Services
+                    </ion-item>
+                    <ion-item (click)="onLoadcontact()" menuClose>
+                            Contact
+                        </ion-item>
+                       
+            <!-- <button ion-item (click)="onLoad(homePage)">
+             <ion-icon name="home" item-left></ion-icon>     
+             Home  
+            </button>
+            <button ion-item (click)="onLoad(aboutPage)">
+                <ion-icon name="about" item-left></ion-icon>     
+                About  
+               </button>
+               <button ion-item (click)="onLoad(servicesPage)">
+                <ion-icon name="services" item-left></ion-icon>     
+                Services  
+               </button>
+               <button ion-item (click)="onLoad(contactPage)">
+                <ion-icon name="contact" item-left></ion-icon>     
+                Contact  
+               </button> -->
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>

@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ 
+<app-touch-event></app-touch-event>
+
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-2>A column</ion-col>
+      <ion-col>A second column</ion-col>   
+    </ion-row>
+    <ion-row>
+      <ion-col offset-2> a new column</ion-col>
+    </ion-row>
+
+
+  </ion-grid>
+
+
+
+
+
+
+
+
+
+
+
+ <button (click)="onClick()"
+ ion-button
+ color="secondary"
+ > A nroamal button
+ </button>
+ <button (click)="onClick()"
+ ion-button
+ large
+block
+icon-right
+ >
+ Home
+ <ion-icon name ="home"></ion-icon>
+ 
+ </button>
+
+ <ion-list>
+   <ion-item> 
+         <ion-icon name ="star" item-right></ion-icon>
+     <h5> the heading of the item</h5>
+     <p>A normal item</p>
+  </ion-item>
+   <button ion-item> a button items</button>
+ </ion-list>
+
+ <ion-item-group>
+<ion-item-divider>A</ion-item-divider>
+    <ion-item> Apple</ion-item>
+    <ion-item>Avocados</ion-item>
+    <ion-item-divider>B</ion-item-divider>
+    <ion-item>Bananas</ion-item>
+    <ion-item>Berries</ion-item>
+  </ion-item-group>
+  <ion-list>
+    <ion-list-header>Privacy</ion-list-header>
+    <ion-item>Tracking</ion-item>
+    <ion-item>Personal images</ion-item>
+  </ion-list>
+
+
+  <ion-list>
+      <ion-list-header>sharing</ion-list-header>
+      <ion-item>with any one</ion-item>
+      <ion-item>None</ion-item>
+    </ion-list>
+
+
+   
+</ion-content>

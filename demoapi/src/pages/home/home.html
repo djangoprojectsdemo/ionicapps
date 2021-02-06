@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngIf="stories">
+  
+    <ion-item *ngFor="let story of stories">
+  <ion-thumbnail item-left>
+  <img class="list-thumb" src="{{story.enclosure.thumbnail}}">
+  </ion-thumbnail>
+  <h2>{{story.title}}</h2>
+  <p>{{story.pubDate}}</p>
+  
+    </ion-item>
+  </ion-list>
+</ion-content>

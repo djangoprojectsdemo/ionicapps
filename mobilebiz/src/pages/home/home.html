@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <section *ngIf="afAuth.authState | async; let user; else showLogin">
+<h1>Welcome {{user.displayName}}!</h1>
+<button (click)="logout()" ion-button full>logout</button>
+  </section>
+  <ng-template #showLogin>
+<h1>You are not logged in .</h1>
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <h2>Login Form</h2>
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+        <ion-input type="email"name="loginEmail" [(ngModel)]="loginEmail"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>Password</ion-label>
+            <ion-input type="password"name="loginPassword" [(ngModel)]="loginPassword"></ion-input>
+     </ion-item>
+     <button ion-button full type="submit">Login</button>
+     </form>
+     <hr>
+     <form #signupForm="ngForm" (ngSubmit)="signup(signupForm)">
+        <h2>Signup Form</h2>
+        <ion-item>
+          <ion-label floating>Email</ion-label>
+            <ion-input type="email"name="signupEmail" [(ngModel)]="signupEmail"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label floating>Password</ion-label>
+                <ion-input type="password"name="signupPassword" [(ngModel)]="signupPassword"></ion-input>
+         </ion-item>
+         <button ion-button full type="submit">signup</button>
+         </form>
+         <button ion-button full icon-left color="googleplus" (click)="googleLogin()">
+           <ion-icon name="logo-googlepluse"></ion-icon>
+           Login with Google
+         </button>
+  </ng-template>
+
+ 
+</ion-content>

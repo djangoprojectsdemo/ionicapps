@@ -1,0 +1,45 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title *ngIf="user">{{user.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-card *ngIf="user">
+  <ion-item>
+    <ion-avatar item-left>
+     <img [src]="user.avatar_url">
+    </ion-avatar>
+    <h2>{{user.login}}</h2>
+    <p>{{user.email}}</p>
+  </ion-item>
+  <ion-card-content>
+    {{user.bio}}
+  </ion-card-content>
+  <ion-row>
+    <ion-col>
+<button ion-button icon-left clear small>
+  <ion-icon name="people"></ion-icon>
+  <div>{{user.followers}} Followers</div>
+</button>
+    </ion-col>
+    <ion-col>
+        <button ion-button icon-left clear small>
+            <ion-icon name="person"></ion-icon>
+            <div>{{user.following}} Following</div>
+          </button>
+    </ion-col>
+  </ion-row>
+</ion-card>
+
+<ion-list *ngIf="repos">
+  <button (click)="userRepoclick(repo.html_url)" ion-item *ngFor="let repo of repos">
+{{repo.name}}
+  </button>
+</ion-list>
+
+</ion-content>

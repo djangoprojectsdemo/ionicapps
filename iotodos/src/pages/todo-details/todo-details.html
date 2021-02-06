@@ -1,0 +1,26 @@
+
+<ion-header *ngIf="todo">
+
+  <ion-navbar>
+    <ion-title>{{todo.text}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding *ngIf="todo">
+<ion-card>
+  <ion-card-header>
+{{todo.text}}
+
+  </ion-card-header>
+  <ion-card-content>
+{{todo.body}}
+<hr>
+due on {{todo.due}}
+  </ion-card-content>
+  <button ion-button block (click)="onEditClick()">Edit</button>
+  <button ion-button block color="danger"(click)="onDeleteClick()">Delete</button>
+
+</ion-card>
+</ion-content>
